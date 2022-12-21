@@ -1,3 +1,5 @@
+This simulation was conducted using MITgmc_66j. 
+
 The complete code, input, and results can be found at https://zenodo.org/record/4898376#.Y6MMeC8Rpf0
 If you would like to access code and input files for sensitivity experiments, please contact Mensah directly. jNote that some heavy input files are missing here!!
 
@@ -38,8 +40,6 @@ This file may need to be modified so the commands are in accordance with the com
 (Note on forcing files)
 The era_xx folder which contains the forcing file can be found under https://ecco.jpl.nasa.gov/drive/files/Version5/Alpha
 The model user needs to change the path to the era_xx folder in the file input/data.exf
-
-This simulation was conducted using MITgmc_66j. 
 
 For more info please send an email to vmensah@lowtem.hokudai.ac.jp
 

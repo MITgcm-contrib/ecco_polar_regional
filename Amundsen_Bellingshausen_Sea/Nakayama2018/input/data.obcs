@@ -1,0 +1,73 @@
+# ***************
+# Open boundaries
+# ***************
+ &OBCS_PARM01
+ OB_Jnorth =   416*-1,
+ OB_Jsouth =   416*1,
+ OB_Ieast  =   896*-1,
+ OB_Iwest  =   896*1,
+#
+ useOBCSprescribe =.TRUE.,
+ useOBCSbalance=.TRUE.,
+# useOBCSsponge    =.TRUE.,
+ OBCSsponge_UatNS =.FALSE.
+ OBCSsponge_VatEW =.FALSE.
+#
+ OBNsFile='1080_hv_FOBEsf2.bin',
+ OBNtFile='1080_hv_FOBEtf2.bin',
+ OBNuFile='1080_hv_FOBEvMf2.bin',
+ OBNvFile='1080_hv_FOBEuf2.bin',
+#
+ OBSsFile='1080_hv_FOBWsf2.bin',
+ OBStFile='1080_hv_FOBWtf2.bin',
+ OBSuFile='1080_hv_FOBWvMf2.bin',
+ OBSvFile='1080_hv_FOBWuf2.bin',
+#
+ OBEsFile='1080_hv_FOBSs.bin',
+ OBEtFile='1080_hv_FOBSt.bin',
+ OBEuFile='1080_hv_FOBSvM.bin',
+ OBEvFile='1080_hv_FOBSu.bin',
+#
+ OBWsFile='1080_hv_FOBNs.bin',
+ OBWtFile='1080_hv_FOBNt.bin',
+ OBWuFile='1080_hv_FOBNvM.bin',
+ OBWvFile='1080_hv_FOBNu.bin',
+#
+ OBNaFile= '1080_OBEaf2.bin',
+ OBNhFile= '1080_OBEhf2.bin',
+ OBNslFile='1080_OBEslf2.bin',
+ OBNsnFile='1080_OBEsnf2.bin',
+ OBNuiceFile='1080_OBEviceMf2.bin',
+ OBNviceFile='1080_OBEuicef2.bin',
+#
+ OBSaFile='1080_OBWaf2.bin',
+ OBShFile='1080_OBWhf2.bin',
+ OBSslFile='1080_OBWslf2.bin',
+ OBSsnFile='1080_OBWsnf2.bin',
+ OBSuiceFile='1080_OBWviceMf2.bin',
+ OBSviceFile='1080_OBWuicef2.bin',
+#
+ OBEaFile='1080_OBSa.bin',
+ OBEhFile='1080_OBSh.bin',
+ OBEslFile='1080_OBSsl.bin',
+ OBEsnFile='1080_OBSsn.bin',
+ OBEuiceFile='1080_OBSviceM.bin',
+ OBEviceFile='1080_OBSuice.bin',
+#
+ OBWaFile='1080_OBNa.bin',
+ OBWhFile='1080_OBNh.bin',
+ OBWslFile='1080_OBNsl.bin',
+ OBWsnFile='1080_OBNsn.bin',
+ OBWuiceFile='1080_OBNviceM.bin',
+ OBWviceFile='1080_OBNuice.bin',
+ &
+# *****************************************
+# Sponge Layer Parameters.
+# *****************************************
+ &OBCS_PARM03
+ Urelaxobcsinner=1296000.E0,
+ Urelaxobcsbound=43200.E0,
+ Vrelaxobcsinner=1296000.E0,
+ Vrelaxobcsbound=43200.E0,
+ spongeThickness=3,
+ &

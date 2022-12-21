@@ -1,5 +1,8 @@
+This simulation was conducted using MITgmc_66j. 
+
 MITgcm model setup and output for "Development of adjoint-based ocean state estimation for the Amundsen and Bellingshausen Seas and ice shelf cavities using MITgcm/ECCO"
-This simulation was conducted using MITgmc_66j. Complete code, input, and results can be found at
+
+Complete code, input, and results can be found at
 https://zenodo.org/record/4541036#.Y6MN-y8Rpf0 or https://ecco.jpl.nasa.gov/drive/files/ECCO2/LLC270/ABS_ADJOINT/results. Note that some heavy input files are missing here!!
 
 
