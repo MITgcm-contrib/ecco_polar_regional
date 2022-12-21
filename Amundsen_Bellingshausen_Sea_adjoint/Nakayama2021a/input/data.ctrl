@@ -1,0 +1,150 @@
+# *********************
+# ECCO controlvariables
+# *********************
+ &ctrl_nml
+# ctrlSmoothCorrel2D=.TRUE.,
+# ctrlSmoothCorrel3D=.TRUE.,
+  doInitXX = .TRUE.,
+#  doInitXX = .FALSE.,
+  doMainPack = .TRUE.,
+  doMainUnpack = .FALSE.,
+ &
+#
+# *********************
+# names for ctrl_pack/unpack
+# *********************
+ &ctrl_packnames
+ &
+#
+# *********************
+# names for CTRL_GENARR, CTRL_GENTIM
+# *********************
+ &CTRL_NML_GENARR
+#global_oce_input_fields/llc90/wt_atemp.data
+ xx_gentim2d_weight(1) = 'atemp_weight_yosi',
+ xx_gentim2d_file(1)='xx_atemp',
+# xx_gentim2d_period(1)=2635200.0,
+ xx_gentim2d_period(1)=1209600.0,
+# xx_gentim2d_preproc(1,1)='norescale',
+# xx_gentim2d_preproc(2,1)='smooth',
+ mult_gentim2d(1) = 0.,
+#
+#global_oce_input_fields/llc90/wt_precip.data
+ xx_gentim2d_weight(2) = 'precip_weight_yosi',
+ xx_gentim2d_file(2)='xx_precip',
+# xx_gentim2d_period(2)=2635200.0,
+ xx_gentim2d_period(2)=1209600.0,
+# xx_gentim2d_preproc(1,2)='norescale',
+# xx_gentim2d_preproc(2,2)='smooth',
+ mult_gentim2d(2) = 0.,
+#
+#global_oce_input_fields/llc90/wt_swdown.data
+ xx_gentim2d_weight(3) = 'swdown_weight_yosi',
+ xx_gentim2d_file(3)='xx_swdown',
+ xx_gentim2d_period(3)=1209600.0,
+# xx_gentim2d_preproc(1,3)='norescale',
+# xx_gentim2d_preproc(2,3)='smooth',
+ mult_gentim2d(3) = 0.,
+#
+#global_oce_input_fields/llc90/wt_lwdown.data
+ xx_gentim2d_weight(4) = 'lwdown_weight_yosi',
+ xx_gentim2d_file(4)='xx_lwdown',
+ xx_gentim2d_period(4)=1209600.0,
+# xx_gentim2d_preproc(1,4)='norescale',
+# xx_gentim2d_preproc(2,4)='smooth',
+ mult_gentim2d(4) = 0.,
+#
+#global_oce_input_fields/llc90/wt_aqh.data
+ xx_gentim2d_weight(5) = 'aqh_weight_yosi',
+ xx_gentim2d_file(5)='xx_aqh',
+ xx_gentim2d_period(5)=1209600.0,
+# xx_gentim2d_preproc(1,5)='norescale',
+# xx_gentim2d_preproc(2,5)='smooth',
+ mult_gentim2d(5) = 0.,
+#
+##global_oce_input_fields/llc90/wt_tauu.data
+# xx_gentim2d_weight(6) = 'std_tauu_cp',
+# xx_gentim2d_file(6)='xx_tauu',
+# xx_gentim2d_period(6)=1209600.0,
+## xx_gentim2d_preproc(1,6)='norescale',
+## xx_gentim2d_preproc(2,6)='smooth',
+# mult_gentim2d(6) = 0.,
+##
+##global_oce_input_fields/llc90/wt_tauv.data
+# xx_gentim2d_weight(7) = 'std_tauv_cp',
+# xx_gentim2d_file(7)='xx_tauv',
+# xx_gentim2d_period(7)=1209600.0,
+## xx_gentim2d_preproc(1,7)='norescale',
+## xx_gentim2d_preproc(2,7)='smooth',
+# mult_gentim2d(7) = 0.,
+#
+#global_oce_input_fields/llc90/wt_uwind.data
+ xx_gentim2d_weight(6) = 'uwind_weight_yosi',
+ xx_gentim2d_file(6)='xx_uwind',
+ xx_gentim2d_period(6)=1209600.0,
+# xx_gentim2d_preproc(1,6)='norescale',
+# xx_gentim2d_preproc(2,6)='smooth',
+ mult_gentim2d(6) = 0.,
+#
+#global_oce_input_fields/llc90/wt_vwind.data
+ xx_gentim2d_weight(7) = 'vwind_weight_yosi',
+ xx_gentim2d_file(7)='xx_vwind',
+ xx_gentim2d_period(7)=1209600.0,
+# xx_gentim2d_preproc(1,7)='norescale',
+# xx_gentim2d_preproc(2,7)='smooth',
+ mult_gentim2d(7) = 0.,
+#
+# xx_gentim2d_weight(8) = 'generic_hFacC.bin',
+# xx_gentim2d_file(8)='xx_runoff',
+# xx_gentim2d_period(8)=1209600.0,
+# xx_gentim2d_preproc(1,8)='norescale',
+# xx_gentim2d_preproc(2,8)='smooth',
+# mult_gentim2d(8) = 0.,
+##
+# xx_genarr2d_weight(1) = 'weight_bottomdrag.bin',
+# xx_genarr2d_file(1)='xx_bottomdrag',
+# xx_genarr2d_preproc(1,1)='norescale',
+# xx_genarr2d_preproc(2,1)='smooth',
+# xx_genarr2d_bounds(1:5,1)=0.,1.e-4,2.0e-2,3.e-2,1.,
+# mult_genarr2d(1) = 0.,
+##
+#global_oce_input_fields/llc90/wt_theta.data
+ xx_genarr3d_weight(1) = 'theta_weight_Hong100',
+ xx_genarr3d_file(1)='xx_theta',
+# xx_genarr3d_period(1)=1200.0,
+# xx_genarr3d_preproc(1,1)='norescale',
+ xx_genarr3d_bounds(1:5,1)=-2.0,-1.9,39.,40.,3.,
+ mult_genarr3d(1) = 0.,
+##
+#global_oce_input_fields/llc90/wt_salt.data
+ xx_genarr3d_weight(2) = 'salt_weight_Hong100',
+ xx_genarr3d_file(2)='xx_salt',
+# xx_genarr3d_period(2)=1200.0,
+# xx_genarr3d_preproc(1,2)='norescale',
+ xx_genarr3d_bounds(1:5,2)=18.,20.9,40.5,41.,3.,
+ mult_genarr3d(2) = 0.,
+##
+####global_oce_input_fields/llc90/
+# xx_genarr3d_weight(3) = 'wkapgm_weight_Hong',
+# xx_genarr3d_file(3)='xx_kapgm',
+## xx_genarr3d_preproc(1,3)='norescale',
+## xx_genarr3d_preproc(2,3)='smooth',
+## xx_genarr3d_bounds(1:5,3)=3.E1,6.E1,0.9E4,1.E4,0.,
+# mult_genarr3d(3) = 0.,
+#### redi is isopycnal
+# xx_genarr3d_weight(4) = 'wkapredi_weight_Hong',
+# xx_genarr3d_file(4)='xx_kapredi',
+## xx_genarr3d_preproc(1,4)='norescale',
+## xx_genarr3d_preproc(2,4)='smooth',
+## xx_genarr3d_bounds(1:5,4)=1.E1,2.E1,0.9E4,1.E4,0.,
+# mult_genarr3d(4) = 0.,
+### diffkr is diapycnal
+ xx_genarr3d_weight(3) = 'wdiffkr_weight_Hong',
+ xx_genarr3d_file(3)='xx_diffkr',
+# xx_genarr3d_preproc(1,3)='norescale',
+# xx_genarr3d_preproc(2,3)='smooth',
+# xx_genarr3d_bounds(1:5,3)=1.E-7,3.E-7,4.0E-4,5.E-4,0.,
+ mult_genarr3d(3) = 0.,
+###
+ &
+

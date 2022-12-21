@@ -1,0 +1,13 @@
+#!/bin/sh
+#------ pjsub option --------#
+#PJM -L rscgrp=regular-cache  
+#PJM -L node=15
+#PJM --mpi proc=240
+#PJM --omp thread=4
+#PJM -L elapse=48:00:00
+#PJM -g gi55
+#PJM -j
+#------- Program execution -------#
+export I_MPI_HBW_POLICY=hbw_preferred
+cd /work/0/pk0050/k00050/MITgcm/run/totten_high_15
+mpiexec.hydra -n ${PJM_MPI_PROC} -genv I_MPI_DEBUG=5 ./mitgcmuv

@@ -1,0 +1,25 @@
+# Age Tracer set-up: No initial file means Age Tracer
+# is automatically initialized uniformely to zero.
+ &PTRACERS_PARM01
+ PTRACERS_Iter0=1,
+ PTRACERS_numInUse=8,
+ PTRACERS_advScheme=7,
+ PTRACERS_diffKh=0.E3,
+ PTRACERS_diffKr=5.456e-6,
+ PTRACERS_initialFile(1)='tr1_ini2.bin',
+ PTRACERS_initialFile(2)='tr2_ini2.bin',
+ PTRACERS_initialFile(3)='tr3_ini2.bin',
+ PTRACERS_initialFile(4)='tr4_ini2.bin',
+ PTRACERS_initialFile(5)='tr5_ini2.bin',
+ PTRACERS_initialFile(6)='tr6_ini2.bin',
+ PTRACERS_initialFile(7)='tr7_ini2.bin',
+ PTRACERS_initialFile(8)='tr8_ini2.bin',
+ PTRACERS_names(1)='tr1',
+ PTRACERS_names(2)='tr2',
+ PTRACERS_names(3)='tr3',
+ PTRACERS_names(4)='tr4',
+ PTRACERS_names(5)='tr5',
+ PTRACERS_names(6)='tr6',
+ PTRACERS_names(7)='tr7',
+ PTRACERS_names(8)='tr8',
+ &

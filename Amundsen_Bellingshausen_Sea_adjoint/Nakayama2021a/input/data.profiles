@@ -1,0 +1,53 @@
+#
+# ******************
+# PROFILES cost function
+# ******************
+ &PROFILES_NML
+#
+ profilesDir='profiles',
+ profilesDoGenGrid=.TRUE.,
+#
+#note: if not identify prof_names, take default T/S
+ profilesfiles(1)= 'test2009_2014_pierre2_copy_2cpus_v4_correct_v1',
+ profilesfiles(2)= 'walker_2cpus_correct',
+ profilesfiles(3)= 'test2010_argo_2cpus_corrected_cp',
+ profilesfiles(4)= 'test2011_argo_2cpus_corrected_cp',
+ profilesfiles(5)= 'test2012_argo_2cpus_corrected_cp',
+ profilesfiles(6)= 'test2013_argo_2cpus_corrected_cp', 
+ profilesfiles(7)= 'test2014_argo_2cpus_corrected_cp',
+ profilesfiles(8)= 'seal2010_argo_2cpus_corrected',
+ profilesfiles(9)= 'Jacobs_mooring_2cpus_correct_cp2',
+ profilesfiles(10)='UK_mooring_2cpus_correct_cp2',
+ profilesfiles(11)='Ugot_mooring_2cpus_correct_cp3',
+ profilesfiles(12)='Korea_mooring_2cpus_correct_cp2',
+ profilesfiles(13)='seal_mooring_2cpus_correct',
+#
+ mult_profiles(1,1)   = 20.0,
+ mult_profiles(1,2)   = 20.0,
+ mult_profiles(2,1)   = 1.0,
+ mult_profiles(2,2)   = 1.0,
+ mult_profiles(3,1)   = 1.0,
+ mult_profiles(3,2)   = 1.0,
+ mult_profiles(4,1)   = 1.0,
+ mult_profiles(4,2)   = 1.0,
+ mult_profiles(5,1)   = 1.0,
+ mult_profiles(5,2)   = 1.0,
+ mult_profiles(6,1)   = 1.0,
+ mult_profiles(6,2)   = 1.0,
+ mult_profiles(7,1)   = 1.0,
+ mult_profiles(7,2)   = 1.0,
+ mult_profiles(8,1)   = 1.0,
+ mult_profiles(8,2)   = 1.0,
+ mult_profiles(9,1)   = 2.86,
+ mult_profiles(9,2)   = 2.86,
+ mult_profiles(10,1)  = 2.86,
+ mult_profiles(10,2)  = 2.86,
+ mult_profiles(11,1)  = 0.143,
+ mult_profiles(11,2)  = 0.143,
+ mult_profiles(12,1)  = 0.143,
+ mult_profiles(12,2)  = 0.143,
+ mult_profiles(13,1)  = 0.0714,
+ mult_profiles(13,2)  = 0.0714,
+#
+#
+ /

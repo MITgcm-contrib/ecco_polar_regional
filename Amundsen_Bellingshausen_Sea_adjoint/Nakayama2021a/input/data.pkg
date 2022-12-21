@@ -1,0 +1,23 @@
+# Packages
+ &PACKAGES
+ useEXF        = .TRUE.,
+ useGMRedi     = .FALSE.,
+ useSeaice     = .TRUE.,
+ useGGL90      = .FALSE.,
+ useSALT_PlUME = .FALSE.,
+ useDiagnostics= .TRUE.,
+ useECCO       = .TRUE.,
+ useCTRL       = .TRUE.,
+ useProfiles   = .TRUE.,
+ useAUTODIFF   = .TRUE.,
+# Setting for Yoshi
+ useKPP         = .TRUE.,
+ useSBO         = .FALSE.,
+ useOBCS        = .TRUE.,
+ useSHELFICE    = .TRUE.,
+ useGrdchk=.FALSE.,
+#useLayers=.TRUE.,
+#
+#usePtracers=.FALSE.,
+#useBBL=.TRUE.,
+ /

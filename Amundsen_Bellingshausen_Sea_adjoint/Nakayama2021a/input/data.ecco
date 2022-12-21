@@ -1,0 +1,305 @@
+# *******************
+# ECCO cost functions
+# *******************
+ &ECCO_COST_NML
+#
+ &
+# ***************************
+# ECCO generic cost functions
+# ***************************
+#global_oce_input_fields/ecco_v4/sigma_iceconc_eccollc.bin
+#input_nsidc_all/nsidc79_monthly_*
+#input_all/sigma_iceconc_eccollc.bin
+ &ECCO_GENCOST_NML
+#
+  gencost_avgperiod(1)  = 'day',
+  gencost_barfile(1) = 'gbar_area',
+  gencost_datafile(1) = 'NSIDC_daily_llc270_2010_2015_adjoint_new2',
+  gencost_errfile(1) = 'std_sigma_icecon.data',
+  gencost_name(1) = 'siv4-conc',
+  gencost_startdate1(1) = 20100101,
+  gencost_startdate2(1)= 00000,
+  gencost_spmin(1) = -999.,
+  gencost_spmax(1) = 999.,
+  gencost_spzero(1) = -9999.,
+  gencost_outputlevel(1)=1,
+  mult_gencost(1) = 0.,
+#
+##'std_sigma_seaice_proxy_new2.data', change unused part from inf to zero
+  gencost_avgperiod(2)  = 'day',
+  gencost_barfile(2) = 'gbar_deconc',
+  gencost_name(2) = 'siv4-deconc',
+  gencost_datafile(2) = 'NSIDC_daily_llc270_2010_2015_adjoint_new2',
+  gencost_errfile(2) = 'std_sigma_seaice_proxy_new2_new.data',
+  gencost_startdate1(2) = 20100101,
+  gencost_startdate2(2)= 00000,
+  gencost_spmin(2) = -999.,
+  gencost_spmax(2) = 999.,
+  gencost_spzero(2) = -9999.,
+  gencost_outputlevel(2)=1,
+  mult_gencost(2) = 0.071,
+#
+  gencost_avgperiod(3)  = 'day',
+  gencost_barfile(3) = 'gbar_exconc',
+  gencost_name(3) = 'siv4-exconc',
+  gencost_datafile(3) = 'NSIDC_daily_llc270_2010_2015_adjoint_new2',
+  gencost_errfile(3) = 'std_sigma_seaice_proxy_new2_new.data',
+  gencost_startdate1(3) = 20100101,
+  gencost_startdate2(3)= 00000,
+  gencost_spmin(3) = -999.,
+  gencost_spmax(3) = 999.,
+  gencost_spzero(3) = -9999.,
+  gencost_outputlevel(3)=1,
+  mult_gencost(3) = 0.071,
+##
+ gencost_avgperiod(4)  = 'day',
+ gencost_barfile(4) = 'm_sst_day',
+ gencost_datafile(4) = 'sst_AMSRE_daily_llc270_2010_2015_adjoint.bin',
+ gencost_errfile(4) = 'std_sst.data',
+ gencost_name(4) = 'reg_sstv4-amsre',
+ gencost_spmin(4) = -2,
+ gencost_spmax(4) = 40.,
+ gencost_spzero(4) = -9999.,
+ gencost_outputlevel(4)=1,
+ mult_gencost(4) = 0.,
+##
+# gencost_avgperiod(5)  = 'month',
+# gencost_barfile(5) = 'm_eta_tom',
+# gencost_datafile(5) = 'Tom_ssh_2011_2015_start2011_nan_fixed.bin',
+# gencost_errfile(5) = 'Tom_ssh_2011_2015_err.bin',
+# gencost_name(5) = 'ssh_tom',
+# gencost_startdate1(5) = 20110101,
+# gencost_startdate2(5)= 00000,
+# gencost_spmin(5) = -999,
+# gencost_spmax(5) = 999,
+# gencost_spzero(5) = -9999.,
+# gencost_outputlevel(5)=1,
+# mult_gencost(5) = 1.0,
+##
+##global_oce_input_fields/ecco_v4/sigma_surf_0p5.bin
+##input_sst_reynolds_v4/reynolds_oiv2_r1*
+##input_err/sigma_surf_0p5.bin
+# gencost_avgperiod(4)  = 'month',
+# gencost_barfile(4) = 'm_sst_mon',
+# gencost_datafile(4) = 'input_sst_reynolds_v4/reynolds_oiv2_r1',
+# gencost_errfile(4) = 'input_err/sigma_surf_0p5.bin',
+# gencost_name(4) = 'sst-reynolds',
+# gencost_spmin(4) = -1.8,
+# gencost_spmax(4) = 40.,
+# gencost_spzero(4) = 0.,
+# gencost_outputlevel(4)=1,
+# mult_gencost(4) = 0.,
+##
+##input_sst_remss_v4/tmi_amsre_oisst_r1_*
+##input_err/sigma_surf_0p5.bin
+# gencost_avgperiod(5)  = 'month',
+# gencost_barfile(5) = 'm_sst_mon',
+# gencost_datafile(5) = 'input_sst_remss_v4/tmi_amsre_oisst_r1',
+# gencost_errfile(5) = 'input_err/sigma_surf_0p5.bin',
+# gencost_name(5) = 'sst-tmi-amsre',
+# gencost_startdate1(5) = 19980101,
+# gencost_startdate2(5)= 00000,
+# gencost_spmin(5) = -1.8,
+# gencost_spmax(5) = 40.,
+# gencost_spzero(5) = 0.,
+# mult_gencost(5) = 0.,
+##
+##global_oce_input_fields/ecco_v4/GRACE_Ensemble_withland_err
+##input_grace_rl05/GRACE_Ensemble_withland*
+##input_grace_rl05/GRACE_Ensemble_withland_err
+# gencost_avgperiod(6)  = 'month',
+# gencost_barfile(6) = 'm_bp_mon',
+# gencost_datafile(6) = 'input_grace_rl05/GRACE_Ensemble_withland',
+# gencost_errfile(6) = 'input_grace_rl05/GRACE_Ensemble_withland_err',
+# gencost_name(6) = 'bpv4-grace',
+# gencost_outputlevel(6)=1,
+# mult_gencost(6) = 0.,
+##
+##global_oce_input_fields/llc90_fields/some_T_atlas.bin
+##global_oce_input_fields/ecco_v4/sigma_T_atlas2_eccollc.bin
+##input_all/sigma_T_atlas2_eccollc.bin
+# gencost_avgperiod(7)  = 'month',
+# gencost_barfile(7) = 'm_theta_mon',
+# gencost_datafile(7) = 'input_hydrogr_etc/some_T_atlas.bin',
+# gencost_errfile(7) = 'input_all/sigma_T_atlas2_eccollc.bin',
+## gencost_preproc(1,7)='clim',
+## gencost_name(7) = 'thetaclim',
+# gencost_name(7) = 'thetarepeat',
+# gencost_spmin(7) = -1.8,
+# gencost_spmax(7) = 40.,
+# gencost_spzero(7) = 0.,
+## note: the gencost_is3d specification is no more needed
+# gencost_is3d(7)=.TRUE.,
+# gencost_outputlevel(7)=1,
+# mult_gencost(7) = 0.0,
+##
+##global_oce_input_fields/llc90_fields/some_S_atlas.bin
+##global_oce_input_fields/ecco_v4/sigma_S_atlas2_eccollc.bin
+##input_all/sigma_S_atlas2_eccollc.bin
+# gencost_avgperiod(8)  = 'month',
+# gencost_barfile(8) = 'm_salt_mon',
+# gencost_datafile(8) = 'input_hydrogr_etc/some_S_atlas.bin',
+# gencost_errfile(8) = 'input_all/sigma_S_atlas2_eccollc.bin',
+## gencost_preproc(1,8)='clim',
+## gencost_name(8) = 'saltclim',
+# gencost_name(8) = 'saltrepeat',
+# gencost_spmin(8) = 25.,
+# gencost_spmax(8) = 40.,
+# gencost_spzero(8) = 0.,
+## note: the gencost_is3d specification is no more needed
+# gencost_is3d(8)=.TRUE.,
+# gencost_outputlevel(8)=1,
+# mult_gencost(8) = 0.0,
+##
+## gencost_avgperiod(9)  = 'day',
+## gencost_barfile(9) = 'm_ustress_day',
+## gencost_datafile(9) = 'QSCAT_Large_u_r2',
+###gencost_startdate1(9) = 19990101,
+###gencost_startdate2(9) = 00000,
+## gencost_errfile(9) = 'QSCAT_Large_u_r2.rms',
+## gencost_name(9) = 'tauZon-scat',
+## gencost_spmin(9) = -999.,
+## gencost_spmax(9) = 999.,
+## gencost_spzero(9) = 0.,
+## mult_gencost(9) = 0.,
+###
+## gencost_avgperiod(10)  = 'day',
+## gencost_barfile(10) = 'm_vstress_day',
+## gencost_datafile(10) = 'QSCAT_Large_v_r2',
+###gencost_startdate1(10) = 19990101,
+###gencost_startdate2(10) = 00000,
+## gencost_errfile(10) = 'QSCAT_Large_v_r2.rms',
+## gencost_name(10) = 'tauMer-scat',
+## gencost_spmin(10) = -999.,
+## gencost_spmax(10) = 999.,
+## gencost_spzero(10) = 0.,
+## mult_gencost(10) = 0.,
+##
+##global_oce_input_fields/ecco_v4/sigma_MDT_glob_eccollc.bin
+##input_all_from_pleiades/sshv4_scale_1p5points.bin
+##input_mdt/mdt_pak09.bin
+##input_err/sigma_MDT_glob_eccollc.bin
+#gencost_datafile(11) = 'input_mdt/mdt_pak09.bin',
+# gencost_datafile(11) = 'mdt_max09_regllc270.bin',
+# gencost_startdate1(11) = 20100101,
+# gencost_startdate2(11) = 00000,
+# gencost_enddate1(11) = 20100330,
+# gencost_enddate2(11) = 00000,
+# gencost_errfile(11) = 'sigma_MDT_glob_eccollc_regllc270.bin',
+# gencost_name(11) = 'sshv4-mdt',
+##gencost_scalefile(11) = 'input_all/sshv4_scale_1p5points.bin',
+# gencost_outputlevel(11)=1,
+# mult_gencost(11) = 1.,
+##
+###input_rads_noice_mad/RADS_TJ_v4_noice_*
+###input_err/slaerr_gridscale_r4.err
+# gencost_barfile(12) = 'm_eta_day',
+## gencost_datafile(12) = 'input_rads_noice_mad/RADS_TJ_v4_noice',
+# gencost_datafile(12) = 'ssh_tj_daily_llc270_adjoint',
+## gencost_startdate1(12) = 20100101,
+## gencost_startdate2(12) = 00000,
+# gencost_avgperiod(12)  = 'day',
+# gencost_errfile(12) = 'std_sigma_ssh.data',
+# gencost_name(12) = 'sshv4-tp',
+# gencost_outputlevel(12)=1,
+# mult_gencost(12) = 1.,
+###
+###input_rads_noice_mad/RADS_ERS_ENV_v4_noice*
+## gencost_datafile(13) = 'input_rads_noice_mad/RADS_ERS_ENV_v4_noice',
+# gencost_datafile(13) = 'ssh_en_daily_llc270_adjoint',
+## gencost_startdate1(13) = 20100101,
+## gencost_startdate2(13) = 00000,
+# gencost_avgperiod(13)  = 'day',
+# gencost_errfile(13) = 'std_sigma_ssh.data',
+# gencost_name(13) = 'sshv4-ers',
+# gencost_outputlevel(13)=1,
+# mult_gencost(13) = 1.,
+###
+###input_rads_noice_mad/RADS_GFO_v4_noice*
+## gencost_datafile(14) = 'input_rads_noice_mad/RADS_GFO_v4_noice',
+# gencost_datafile(14) = 'ssh_g1_daily_llc270_adjoint',
+## gencost_startdate1(14) = 20100101,
+## gencost_startdate2(14) = 00000,
+# gencost_avgperiod(14)  = 'day',
+# gencost_errfile(14) = 'std_sigma_ssh.data',
+# gencost_name(14) = 'sshv4-gfo',
+# gencost_outputlevel(14)=1,
+# mult_gencost(14) = 0.,
+##
+##input_all_from_pleiades/sshv4_scale_3points.bin
+# gencost_errfile(15) = 'input_err/slaerr_largescale_r4.err',
+# gencost_name(15) = 'sshv4-lsc',
+# gencost_scalefile(15) = 'input_all/sshv4_scale_3points.bin',
+# gencost_outputlevel(15)=1,
+# mult_gencost(15) = 0.,
+##
+# gencost_name(16) = 'sshv4-gmsl',
+# gencost_outputlevel(16)=1,
+# mult_gencost(16) = 0.,
+###
+##make sure not to use spzero=0, else got masked out
+##because default obs is set to zero, then matched with spzero
+##to get rid of these points.
+# gencost_avgperiod(17)  = 'month',
+## gencost_avgperiod(17)  = 'day',
+# gencost_barfile(17) = 'm_trVol',
+## gencost_errfile(17) = 'input_maskTransport/maskBeringStrait',
+# gencost_name(17) = 'transpV',
+# gencost_preproc(1,17)= 'nosumsq',
+# gencost_preproc_i(1,17)= 7,
+## gencost_preproc_r(1,17)= 1.0,
+# gencost_preproc_r(1,17)= -1.0,
+# gencost_spmin(17) = -1.e16,
+# gencost_spmax(17) = 1.e16,
+# gencost_spzero(17) = -9999.,
+# gencost_is3d(17)=.TRUE.,
+# gencost_outputlevel(17)=0,
+# mult_gencost(17) = 0.0,
+###
+# gencost_avgperiod(18)  = 'month',
+## gencost_avgperiod(18)  = 'day',
+# gencost_barfile(18) = 'm_trHeat',
+## gencost_errfile(18) = 'input_maskTransport/maskBeringStrait',
+# gencost_name(18) = 'transpH',
+# gencost_preproc(1,18)= 'nosumsq',
+# gencost_preproc_i(1,18)= 7,
+## gencost_preproc_r(1,18)= 1.0,
+# gencost_preproc_r(1,18)= -1.0,
+# gencost_spmin(18) = -1.e16,
+# gencost_spmax(18) = 1.e16,
+# gencost_spzero(18) = -9999.,
+# gencost_is3d(18)=.TRUE.,
+# gencost_outputlevel(18)=0,
+# mult_gencost(18) = 0.0,
+###
+# gencost_avgperiod(19)  = 'month',
+## gencost_avgperiod(19)  = 'day',
+# gencost_barfile(19) = 'm_trSalt',
+## gencost_errfile(19) = 'input_maskTransport/maskBeringStrait',
+# gencost_name(19) = 'transpS',
+# gencost_preproc(1,19)= 'nosumsq',
+# gencost_preproc_i(1,19)= 7,
+## gencost_preproc_r(1,19)= 1.0,
+# gencost_preproc_r(1,19)= -1.0,
+# gencost_spmin(19) = -1.e16,
+# gencost_spmax(19) = 1.e16,
+# gencost_spzero(19) = -9999.,
+# gencost_is3d(19)=.TRUE.,
+# gencost_outputlevel(19)=0,
+# mult_gencost(19) = 0.0,
+###
+# gencost_avgperiod(20)  = 'day',
+# gencost_barfile(20) = 'm_sst',
+# gencost_startdate1(20) = 20010120,
+# gencost_startdate2(20)= 00000,
+# gencost_datafile(20) = 'obs_test.data',
+# gencost_errfile(20) = 'error_test.data',
+# gencost_name(20) = 'm_sst',
+# gencost_spmin(20) = -1.e16,
+# gencost_spmax(20) = 1.e16,
+# gencost_spzero(20)= -9999.,
+# gencost_outputlevel(20)=0,
+# gencost_mask(20)='p',
+# mult_gencost(20) = 1.0,
+ &
+#
