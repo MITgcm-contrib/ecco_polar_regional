@@ -1,0 +1,12 @@
+# *******************************
+# Parameter for SHELFICE package
+# ******************************
+ &SHELFICE_PARM01
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile   = 'itopo_pierre2009.bin',
+ SHELFICEconserve = .TRUE.,
+ no_slip_shelfice = .false.,
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .TRUE.,
+/
+ &

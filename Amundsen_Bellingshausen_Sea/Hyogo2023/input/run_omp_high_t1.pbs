@@ -1,0 +1,14 @@
+#!/bin/sh
+#------ pjsub option --------#
+##PJM -L rscgrp=debug-cache
+#PJM -L rscgrp=regular-cache  
+#PJM -L node=27
+#PJM --mpi proc=448
+#PJM --omp thread=4
+#PJM -L elapse=48:00:00
+#PJM -g gi55
+#PJM -j
+#------- Program execution -------#
+export I_MPI_HBW_POLICY=hbw_preferred
+cd /work/gn32/n32002/MITgcm/run/run260_ptracer_66j_start_1992_2018_final
+mpiexec.hydra -n ${PJM_MPI_PROC} -genv I_MPI_DEBUG=5 ./mitgcmuv

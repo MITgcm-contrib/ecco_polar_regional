@@ -1,0 +1,13 @@
+# *******************************
+# Parameter for SHELFICE package
+# ******************************
+ &SHELFICE_PARM01
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile   = '1080_icetopo_fastice.bin',
+ SHELFICEconserve = .TRUE.,
+ no_slip_shelfice = .false.,
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .FALSE.,
+ SHELFICETransCoeffTFile ='SHELFICETransCoeffTFile_run209_s.bin',
+/
+ &
