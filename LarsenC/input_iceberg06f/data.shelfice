@@ -1,0 +1,15 @@
+# *******************************
+# Parameter for SHELFICE package
+# ******************************
+ &SHELFICE_PARM01
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile   = '../repository_bin_files/icetopo_larsen_v6_iceberg.bin',
+ SHELFICEconserve = .TRUE.,
+ no_slip_shelfice = .false.,
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEheatTransCoeff = 0.0235,
+ SHELFICEsaltTransCoeff = 0.00067,
+ shiCdrag = 0.0022,
+ SHELFICEuseGammaFrict = .TRUE.,
+/
+ &

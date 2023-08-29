@@ -1,0 +1,19 @@
+#!/bin/bash
+#PBS -N iceb_06f
+#PBS -q long
+#PBS -W group_list=s5692
+#PBS -l select=49:ncpus=20:model=ivy
+#PBS -l walltime=30:00:00
+#PBS -j oe
+#PBS -m abe
+#PBS -l site=needed=/home1+/home3+/home4+/nobackupp17
+
+module load comp-intel/2020.4.304
+module load mpi-hpe/mpt.2.25
+module load hdf4/4.2.12 hdf5/1.8.18_mpt netcdf/4.4.1.1_mpt
+
+export RUN_DIR=/nobackupp11/mpoinell/larsen/run_iceberg06f
+
+cd $RUN_DIR
+mpiexec -np 964 ./mitgcmuv_larsen_v5
+
