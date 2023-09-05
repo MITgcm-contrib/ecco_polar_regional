@@ -1,0 +1,11 @@
+# Packages
+ &PACKAGES
+ useCAL   = .TRUE.,
+ useEXF   = .TRUE.,
+ useKPP   = .TRUE.,
+ useSeaice= .TRUE.,
+ useDiagnostics=.TRUE.,
+ useOBCS        = .TRUE.,
+ useSHELFICE    = .TRUE.,
+ usePTRACERS=.FALSE.,
+ &
