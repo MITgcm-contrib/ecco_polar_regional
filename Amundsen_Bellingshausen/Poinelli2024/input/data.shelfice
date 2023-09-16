@@ -1,0 +1,12 @@
+# *******************************
+# Parameter for SHELFICE package
+# ******************************
+ &SHELFICE_PARM01
+ SHELFICEboundaryLayer = .TRUE.,
+# SHELFICEtopoFile   = 'IceDraft_BedMachine_ext_qsg_yosi3.bin',
+ SHELFICEconserve = .TRUE.,
+ no_slip_shelfice = .false.,
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .TRUE.,
+/
+ &
