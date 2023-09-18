@@ -4,8 +4,8 @@
 #
 # Continuous equation parameters
  &PARM01
- Tref = 150*-1.5,
- Sref = 46*34.4,
+ Tref = 160*-1.5,
+ Sref = 160*34.4,
  viscAz=1.0e-4,
  no_slip_sides=.FALSE.,
  no_slip_bottom=.TRUE.,
@@ -86,8 +86,8 @@ deltaT=20,
  xgOrigin = -109.0,
  ygOrigin = -75.5,
  delX=550*0.00911,
- delY=710*0.00225,
- delZ=150*10.0,
+ delY=700*0.00225,
+ delZ=160*10.0,
  &
 
 # Input datasets
