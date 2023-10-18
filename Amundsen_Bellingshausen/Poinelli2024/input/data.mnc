@@ -1,0 +1,19 @@
+ &MNC_01
+ mnc_use_outdir=.TRUE.,
+ mnc_outdir_str='mnc_',
+ mnc_outdir_date=.FALSE.,
+ mnc_outdir_num=.TRUE.,
+ pickup_write_mnc=.FALSE.,
+ pickup_read_mnc=.FALSE.,
+# mnc_use_indir=.FALSE.,
+# mnc_indir_str=.'', 
+ monitor_mnc=.FALSE.,
+# timeave_mnc=.FALSE.,
+# snapshot_mnc=.FALSE.,
+ pickup_write_mnc=.FALSE.,
+ pickup_read_mnc=.FALSE.,
+# mnc_filefreq=86400.,	
+ &
+# Note: Some systems use & as the
+# namelist terminator. Other systems
+# use a / character (as shown here).

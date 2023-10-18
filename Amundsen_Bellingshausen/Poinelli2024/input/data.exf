@@ -3,184 +3,189 @@
 # *********************
 #
  &EXF_NML_01
-#
- useAtmWind        = .TRUE.,
-#NCEP VALUES:
-# exf_albedo        = 0.15,
-  exf_scal_BulkCdn   = 0.25,
-# cstanton_1         = 0.049118,
-# cstanton_2         = 0.02506,
-# cdalton            = 0.052025,
-
 #TO COMBINE WITH ALLOW_ZENITH_ANGLE:
  exf_albedo        = 0.1,
  useExfZenIncoming = .TRUE., 
  select_ZenAlbedo  = 1,
 #
- ocean_emissivity = 0.97,
- ice_emissivity = 0.95,
- snow_emissivity = 0.95,
-#
+ ocean_emissivity  = 0.97,
+ ice_emissivity    = 0.95,
+ snow_emissivity   = 0.95,
  exf_iprec         = 32,
  exf_yftype        = 'RL',
  useExfYearlyFields= .TRUE.,
  useExfCheckRange  = .FALSE.,
- /
+ useRelativeWind   = .FALSE.,
+ &
 #
  &EXF_NML_02
- atempfile         = 'era_xx_it50/llc270_it50_tmp2m_degC',
- aqhfile           = 'era_xx_it50/llc270_it50_spfh2m',
- precipfile        = 'era_xx_it50/llc270_it50_rain',
- uwindfile         = 'era_xx_it50/llc270_it50_u10m',
- vwindfile         = 'era_xx_it50/llc270_it50_v10m',
- swdownfile        = 'era_xx_it50/llc270_it50_dsw',
- lwdownfile        = 'era_xx_it50/llc270_it50_dlw',
+# atempfile         = '/nobackupp17/hzhang1/forcing/era5/ERA5_tmp2m_degC',
+# aqhfile           = '/nobackupp17/hzhang1/forcing/era5/ERA5_spfh2m',
+# precipfile        = '/nobackupp17/hzhang1/forcing/era5/ERA5_rain',
+# uwindfile         = '/nobackupp17/hzhang1/forcing/era5/ERA5_u10m',
+# vwindfile         = '/nobackupp17/hzhang1/forcing/era5/ERA5_v10m',
+# swdownfile        = '/nobackupp17/hzhang1/forcing/era5/ERA5_dsw',
+# lwdownfile        = '/nobackupp17/hzhang1/forcing/era5/ERA5_dlw',
+#
+ atempfile         = '/nobackupp11/mpoinell/forcing/era5/ERA5_tmp2m_degC',
+ aqhfile           = '/nobackupp11/mpoinell/forcing/era5/ERA5_spfh2m',
+ precipfile        = '/nobackupp11/mpoinell/forcing/era5/ERA5_rain',
+ uwindfile         = '/nobackupp11/mpoinell/forcing/era5/ERA5_u10m',
+ vwindfile         = '/nobackupp11/mpoinell/forcing/era5/ERA5_v10m',
+ swdownfile        = '/nobackupp11/mpoinell/forcing/era5/ERA5_dsw',
+ lwdownfile        = '/nobackupp11/mpoinell/forcing/era5/ERA5_dlw',
 #
  atempstartdate1   = 19920101,
  atempstartdate2   = 000000,
- atempperiod       = 21600.0,
+ atempperiod       = 3600.0,
 #
  aqhstartdate1     = 19920101,
  aqhstartdate2     = 000000,
- aqhperiod         = 21600.0,
+ aqhperiod         = 3600.0,
 #
  precipstartdate1  = 19920101,
- precipstartdate2  = 030000,
- precipperiod      = 21600.0,
+ precipstartdate2  = 003000,
+ precipperiod      = 3600.0,
 #
-# runofffile        = 'runoff-2d-Fekete-1deg-mon-V4-SMOOTH.bin',
+# runofffile        = '../repository_bin_files/runoff-2d-Fekete-1deg-mon-V4-SMOOTH.bin',
 # runoffperiod      = -12,
 #
  uwindstartdate1   = 19920101,
  uwindstartdate2   = 000000,
- uwindperiod       = 21600.0,
+ uwindperiod       = 3600.0,
 #
  vwindstartdate1   = 19920101,
  vwindstartdate2   = 000000,
- vwindperiod       = 21600.0,
+ vwindperiod       = 3600.0,
 #
  swdownstartdate1  = 19920101,
- swdownstartdate2  = 030000,
- swdownperiod      = 21600.0,
+ swdownstartdate2  = 003000,
+ swdownperiod      = 3600.0,
 #
  lwdownstartdate1  = 19920101,
- lwdownstartdate2  = 030000,
- lwdownperiod      = 21600.0,
-#
- /
+ lwdownstartdate2  = 003000,
+ lwdownperiod      = 3600.0,
+ &
 #
  &EXF_NML_03
-#NOT FOR EIG exf_offset_atemp  = 273.3971,
- exf_offset_atemp  = 273.15,
-#NOT FOR NEW RUNOFF FIELD exf_inscal_runoff = 3.1710e-08,
- exf_inscal_swdown = -1.0,
- exf_inscal_lwdown = -1.0,
-# to compensate for sea level rise for nlfs/realFWF
-#precip_exfremo_intercept = 1.073E-9,
-#precip_exfremo_slope = -3.340E-18,
- /
+ exf_offset_atemp   = 273.15,
+ exf_inscal_swdown  = -1.0,
+ exf_inscal_lwdown  = -1.0,
+ &
 #
  &EXF_NML_04
-# runoff_interpMethod = 0,
+ runoff_interpMethod = 0,
 #
  atemp_lon0        =   0.0000000D0,
- atemp_lon_inc     =   0.7031250D0,
- atemp_lat0        = -89.4628220D0,
- atemp_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- atemp_nlon        = 512,
- atemp_nlat        = 256,
+ atemp_lon_inc     =   0.2812500D0,
+ atemp_lat0        = -89.7848850D0,
+ atemp_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ atemp_nlon        = 1280,
+ atemp_nlat        = 640,
 #
  aqh_lon0        =   0.0000000D0,
- aqh_lon_inc     =   0.7031250D0,
- aqh_lat0        = -89.4628220D0,
- aqh_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- aqh_nlon        = 512,
- aqh_nlat        = 256,
+ aqh_lon_inc     =   0.2812500D0,
+ aqh_lat0        = -89.7848850D0,
+ aqh_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ aqh_nlon        = 1280,
+ aqh_nlat        = 640,
 #
  precip_lon0        =   0.0000000D0,
- precip_lon_inc     =   0.7031250D0,
- precip_lat0        = -89.4628220D0,
- precip_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- precip_nlon        = 512,
- precip_nlat        = 256,
+ precip_lon_inc     =   0.2812500D0,
+ precip_lat0        = -89.7848850D0,
+ precip_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ precip_nlon        = 1280,
+ precip_nlat        = 640,
 #
  uwind_lon0        =   0.0000000D0,
- uwind_lon_inc     =   0.7031250D0,
- uwind_lat0        = -89.4628220D0,
- uwind_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- uwind_nlon        = 512,
- uwind_nlat        = 256,
+ uwind_lon_inc     =   0.2812500D0,
+ uwind_lat0        = -89.7848850D0,
+ uwind_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ uwind_nlon        = 1280,
+ uwind_nlat        = 640,
 #
  vwind_lon0        =   0.0000000D0,
- vwind_lon_inc     =   0.7031250D0,
- vwind_lat0        = -89.4628220D0,
- vwind_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- vwind_nlon        = 512,
- vwind_nlat        = 256,
+ vwind_lon_inc     =   0.2812500D0,
+ vwind_lat0        = -89.7848850D0,
+ vwind_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ vwind_nlon        = 1280,
+ vwind_nlat        = 640,
 #
  swdown_lon0        =   0.0000000D0,
- swdown_lon_inc     =   0.7031250D0,
- swdown_lat0        = -89.4628220D0,
- swdown_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- swdown_nlon        = 512,
- swdown_nlat        = 256,
+ swdown_lon_inc     =   0.2812500D0,
+ swdown_lat0        = -89.7848850D0,
+ swdown_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ swdown_nlon        = 1280,
+ swdown_nlat        = 640,
 #
  lwdown_lon0        =   0.0000000D0,
- lwdown_lon_inc     =   0.7031250D0,
- lwdown_lat0        = -89.4628220D0,
- lwdown_lat_inc     = 0.6958694,0.6999817,0.7009048,0.7012634,0.7014313,
-                     245*0.7017418,
-                     0.7014313,0.7012634,0.7009048,0.6999817,0.6958694
- lwdown_nlon        = 512,
- lwdown_nlat        = 256,
- /
+ lwdown_lon_inc     =   0.2812500D0,
+ lwdown_lat0        = -89.7848850D0,
+ lwdown_lat_inc     = 0.2786766D0,0.2803199D0,0.2806917D0,0.2808328D0,0.2809011D0,0.2809392D0,0.2809626D0,0.2809781D0,
+                     0.2809888D0,0.2809965D0,0.2810023D0,0.2810067D0,0.2810102D0,0.2810129D0,0.2810151D0,
+                     33*0.2810258D0,543*0.2810302D0,33*0.2810258D0,
+                     0.2810151D0,0.2810129D0,0.2810102D0,0.2810067D0,0.2810023D0,0.2809965D0,0.2809888D0,0.2809781D0,
+                     0.2809626D0,0.2809392D0,0.2809011D0,0.2808328D0,0.2806917D0,0.2803199D0,0.2786766D0,
+ lwdown_nlon        = 1280,
+ lwdown_nlat        = 640,
+ &
 #
  &EXF_NML_OBCS
- obcsNstartdate1   = 20091231,
- obcsNstartdate2   = 233000,
- obcsNperiod       = 3600.0,
 #
- obcsSstartdate1   = 20091231,
- obcsSstartdate2   = 233000,
- obcsSperiod       = 3600.0,
+ obcsNstartdate1   = 20191215,
+ obcsNstartdate2   = 120000,
+ obcsNperiod       = 2635200.0,
 #
- obcsEstartdate1   = 20091231,
- obcsEstartdate2   = 233000,
- obcsEperiod       = 3600.0,
+# obcsSstartdate1   = 20191215,
+# obcsSstartdate2   = 120000,
+# obcsSperiod       = 2635200.0,
 #
- obcsWstartdate1   = 20091231,
- obcsWstartdate2   = 233000,
- obcsWperiod       = 3600.0,
+ obcsEstartdate1   = 20191215,
+ obcsEstartdate2   = 120000,
+ obcsEperiod       = 2635200.0,
 #
+ obcsWstartdate1   = 20191215,
+ obcsWstartdate2   = 120000,
+ obcsWperiod       = 2635200.0,
 #
- siobNstartdate1   = 20091231,
- siobNstartdate2   = 233000,
- siobNperiod       = 3600.0,
+# siobSstartdate1   = 20191215,
+# siobSstartdate2   = 120000,
+# siobSperiod       = 2635200.0,
 #
- siobSstartdate1   = 20091231,
- siobSstartdate2   = 233000,
- siobSperiod       = 3600.0,
+ siobNstartdate1   = 20191215,
+ siobNstartdate2   = 120000,
+ siobNperiod       = 2635200.0,
 #
- siobEstartdate1   = 20091231,
- siobEstartdate2   = 233000,
- siobEperiod       = 3600.0,
+ siobWstartdate1   = 20191215,
+ siobWstartdate2   = 120000,
+ siobWperiod       = 2635200.0,
 #
- siobWstartdate1   = 20091231,
- siobWstartdate2   = 233000,
- siobWperiod       = 3600.0,
+ siobEstartdate1   = 20191215,
+ siobEstartdate2   = 120000,
+ siobEperiod       = 2635200.0,
 #
  &
-
-

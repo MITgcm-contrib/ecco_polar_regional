@@ -20,5 +20,5 @@
  &W2_EXCH2_PARM01
   W2_mapIO    = 1,
   preDefTopol = 1,
-  dimsFacets  = 460, 600,
+  dimsFacets  = 550, 700,
  &

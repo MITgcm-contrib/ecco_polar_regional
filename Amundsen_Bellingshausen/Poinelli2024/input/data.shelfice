@@ -3,10 +3,18 @@
 # ******************************
  &SHELFICE_PARM01
  SHELFICEboundaryLayer = .TRUE.,
-# SHELFICEtopoFile   = 'IceDraft_BedMachine_ext_qsg_yosi3.bin',
+ SHELFICEtopoFile   = '/nobackupp11/mpoinell/thwaites/repository_bin_files/draft_v01.bin',
+ SHELFICEloadAnomalyFile = '/nobackupp11/mpoinell/thwaites/repository_bin_files/phi0surf.bin',
  SHELFICEconserve = .TRUE.,
- no_slip_shelfice = .false.,
+ no_slip_shelfice = .FALSE.,
  SHELFICEwriteState = .TRUE.,
  SHELFICEuseGammaFrict = .TRUE.,
+# parameters after jenkins et al. 2010, JPO
+ shiCdrag = 0.0097,
+ SHELFICEheatTransCoeff = 1.1e-02,
+ SHELFICEsaltTransCoeff = 3.1e-04,
+# SHELFICEheatTransCoeff = 0,
+# SHELFICEsaltTransCoeff = 0,
+ SHELFICEDragQuadratic = 0.0025,
 /
  &

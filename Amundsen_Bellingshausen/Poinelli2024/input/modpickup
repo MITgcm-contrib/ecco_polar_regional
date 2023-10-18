@@ -1,0 +1,58 @@
+#! /bin/csh
+
+## pickup
+set filesize=2781240000
+set last_pickup=`ls -lt pickup.*.data | awk '$5~/'${filesize}'/{print $NF}'|head -1 `
+if (-e ${last_pickup}) then
+set last_meta=`echo $last_pickup | sed 's/data/meta/'`
+set timestep=`awk '$1~/timeStepNumber/{printf("%010d",$4)}' $last_meta`
+##\ln -sf ${last_pickup} pickup.${timestep}.data
+mv ${last_pickup} pickup.${timestep}.data
+set last_pickupmeta=`echo $last_pickup|awk '{split($0,a,".");print a[1]"."a[2]".meta"}'`
+##\ln -sf ${last_pickupmeta} pickup.${timestep}.meta
+mv ${last_pickupmeta} pickup.${timestep}.meta
+#endif
+
+
+### pickup_seaice
+#set filesize=58240000
+#set last_pickup_seaice=`ls -lt pickup_seaice.*.data | awk '$5~/'${filesize}'/{print $NF}'|head -1 `
+#if (-e ${last_pickup_seaice}) then
+#set last_meta=`echo $last_pickup_seaice | sed 's/data/meta/'`
+#set timestep=`awk '$1~/timeStepNumber/{printf("%010d",$4)}' $last_meta`
+#mv ${last_pickup_seaice} pickup_seaice.${timestep}.data
+#set last_pickupmeta=`echo $last_pickup_seaice|awk '{split($0,a,".");print a[1]"."a[2]".meta"}'`
+#mv ${last_pickupmeta} pickup_seaice.${timestep}.meta
+
+set newiter0=`expr $timestep \* 1`
+ex - data >> /dev/null <<EOF
+/nIter0=
+c
+ nIter0=${newiter0},
+.
+w
+q
+EOF
+
+endif
+
+#
+\mv STDOUT.0000 output/STDOUT.${newiter0}
+\rm STD* w2*
+#
+#
+
+### ptracers uncomment above endif
+
+### pickup_ptracers
+#set filesize=153600000
+#set last_pickup_ptracers=`ls -lt pickup_ptracers.*.data | awk '$5~/'${filesize}'/{print $NF}'|head -1 `
+#if (-e ${last_pickup_ptracers}) then
+#set last_meta=`echo $last_pickup_ptracers | sed 's/data/meta/'`
+#set timestep=`awk '$1~/timeStepNumber/{printf("%010d",$4)}' $last_meta`
+#mv ${last_pickup_ptracers} pickup_ptracers.${timestep}.data
+#set last_pickupmeta=`echo $last_pickup_ptracers|awk '{split($0,a,".");print a[1]"."a[2]".meta"}'`
+#mv ${last_pickupmeta} pickup_ptracers.${timestep}.meta
+#endif
+#
+##

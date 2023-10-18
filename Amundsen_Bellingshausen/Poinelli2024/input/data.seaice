@@ -1,7 +1,16 @@
 # SEAICE parameters
  &SEAICE_PARM01
+# Mattia's additions:
+      SEAICEpressReplFac=0.,
+      SEAICEaddSnowMass=.FALSE.,
+      SEAICEscaleSurfStress=.FALSE.
+      SEAICE_useMultDimSnow=.FALSE.,
+      SEAICE_dump_mnc=.TRUE.,
+      SEAICEwriteState=.TRUE.,
+#      SEAICE_dumpFreq=31536000.0,
+# end of Mattia's additions
       SEAICE_strength    = 1.50e+04,
-      HO = 1.0,
+      HO = 1,
       SEAICE_drag = 0.00125, 
       SEAICE_waterDrag = 2.845,
       SEAICEuseTILT=.FALSE.,
@@ -20,12 +29,12 @@
 # for regular time step:
 #      SEAICE_deltaTevp   = 60.,
 # for lsr:
-      LSR_ERROR          = 2.e-4,
+      LSR_ERROR          = 2.e-5,
       SEAICEuseDYNAMICS  = .TRUE.,
 # BAD OPTION -- DO NOT USE -- SEAICE_maskRHS     = .TRUE.,
       MIN_ATEMP          = -40.,
       MIN_TICE           = -40.,
-      SEAICEadvScheme    = 7,
+      SEAICEadvScheme    = 33,
       SEAICEuseFluxForm = .TRUE.,
       SEAICEadvSnow      = .TRUE.,
       SEAICEadvSalt      = .FALSE.,
@@ -54,12 +63,10 @@
       SEAICE_wetIceAlb_south   = 0.61
       SEAICE_drySnowAlb_south  = 0.78
       SEAICE_wetSnowAlb_south  = 0.63
-#I.C. by Ian
-        AreaFile           = 'Z2Dice.bin',
-        HsnowFile          = 'Z2Dice.bin',
-        HeffFile           = 'Z2Dice.bin',
+#initial conditions
+        AreaFile  = '/nobackupp11/mpoinell/thwaites/repository_bin_files/SIarea.bin',
+        HeffFile  = '/nobackupp11/mpoinell/thwaites/repository_bin_files/SIheff.bin',
+ &SEAICE_PARM02
+
  /
 #
- &SEAICE_PARM02
- /
-

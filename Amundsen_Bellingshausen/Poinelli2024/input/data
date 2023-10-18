@@ -4,8 +4,10 @@
 #
 # Continuous equation parameters
  &PARM01
- Tref = 160*-1.5,
- Sref = 160*34.4,
+# Tref = 150*-1.5,
+# Sref = 150*34.4,
+# tRefFile='../repository_bin_files/Tref_v01.bin',
+# sRefFile='../repository_bin_files/Sref_v01.bin',
  viscAz=1.0e-4,
  no_slip_sides=.FALSE.,
  no_slip_bottom=.TRUE.,
@@ -35,7 +37,7 @@
  vectorInvariantMomentum=.TRUE.,
  implicitFreeSurface=.TRUE.,
  exactConserv=.TRUE.,
- debuglevel=3,
+ debuglevel=1,
  convertFW2Salt=33.4,
  useSingleCPUio=.TRUE.,
  globalFiles=.TRUE.,
@@ -49,19 +51,22 @@
 
 # Time stepping parameters
  &PARM03
- nIter0=0,
- endtime=0,
+ nIter0=993600,
+# nTimeSteps=679,
+# endtime=0,
+# endtime=15552000,
+ endtime=31536000,
 # endtime=345600,
  forcing_In_AB=.FALSE.,
  momDissip_In_AB=.FALSE.,
 #when using the cd scheme:
 # epsAB_CD = 0.25,
 # tauCD=172800.0,
-deltaT=20,
-# deltaTmom     =20,
-# deltaTtracer  =20,
-# deltaTfreesurf=20,
-# deltaTClock   =20,
+ deltaT=30,
+# deltaTmom     =30,
+# deltaTtracer  =30,
+# deltaTfreesurf=30,
+# deltaTClock   =30,
 #when using ab2:
  abEps = 0.1,
 #when using ab3:
@@ -71,13 +76,15 @@ deltaT=20,
 #
 # pChkptFreq  =86400.0,
 # chkptFreq   =86400.0,
- pChkptFreq  =86400.0,
- chkptFreq   =86400.0,
- taveFreq    =86400.0,
- dumpFreq    =86400.0,
- monitorFreq  =300.0,
+ pChkptFreq  =2592000.0,
+ chkptFreq   =1296000.0,
+ taveFreq    =31536000.0,
+# dumpFreq   =31536000.0,
+ dumpFreq    =31536000.0,
+ monitorFreq  =86400.0,
  dumpInitAndLast = .TRUE.,
  pickupStrictlyMatch=.FALSE.,
+# outputTypesInclusive=.FALSE.,
  /
 
 # Gridding parameters
@@ -86,16 +93,17 @@ deltaT=20,
  xgOrigin = -109.0,
  ygOrigin = -75.5,
  delX=550*0.00911,
- delY=700*0.00225,
- delZ=160*10.0,
+ delY=700*0.00229,
+ delZ=150*10.0,
  &
 
 # Input datasets
  &PARM05
- bathyFile      ='bathy_v0.bin',
-# hydrogThetaFile='initT_latlon_qsg.bin',
-# hydrogSaltFile ='initS_latlon_qsg.bin',
+ bathyFile      ='/nobackupp11/mpoinell/thwaites/repository_bin_files/bathy_v01.bin',
+ hydrogThetaFile='/nobackupp11/mpoinell/thwaites/repository_bin_files/THETA_init.bin',
+ hydrogSaltFile ='/nobackupp11/mpoinell/thwaites/repository_bin_files/SALT_init.bin',
  checkIniTemp=.FALSE.,
  checkIniSalt=.FALSE.,
 #
  /
+
