@@ -1,10 +1,11 @@
 [![DOI](https://zenodo.org/badge/672878589.svg)](https://zenodo.org/badge/latestdoi/672878589)
-# Supplementary code, data and model output for: _Ice-front retreat controls on ocean dynamics under Larsen C Ice Shelf, Antarctica_ currently under review for GRL
+# Supplementary code, data and model output for: _Ice-front retreat controls on ocean dynamics under Larsen C Ice Shelf, Antarctica_ 
 
 This repository contains the necessary code and input data to reproduce the MITgcm model output presented in:
 
-Poinelli, M., Nakayama, Y., Larour, E., Vizcaino, M., and Riva, R.: 
-_Ice-front retreat controls on ocean dynamics under Larsen C Ice Shelf, Antarctica_
+Poinelli, M., Nakayama, Y., Larour, E., Vizcaino, M., & Riva, R. (2023). Ice-front retreat controls on ocean dynamics under Larsen C Ice Shelf, Antarctica. _Geophysical Research Letters_, 50, e2023GL104588, https://doi.org/10.1029/2023GL104588
+![image](https://github.com/MPoinelli/ecco_polar_regional/assets/23040762/3b6a50c0-521a-4786-bc7a-4a4b1888ad36)
+
 
 By using these resources, researchers can replicate the results obtained in the study and further explore the findings.
 
@@ -61,4 +62,4 @@ However, as mentioned above, the experiments were designed to rely on parallel c
 
 Furthermore, you will need .bin files that are in here https://ecco.jpl.nasa.gov/drive/files/ECCO2/High_res_LarsenC/repository_bin_files.
 
-Do not hesitate to send me an [email](mailto:mattia.poinelli@jpl.nasa.gov) if you need support with running these experiments in parallel.
+Do not hesitate to send me an [email](mailto:mattia.poinelli@jpl.nasa.gov) if you need support with running these experiments in a parallel environment.
