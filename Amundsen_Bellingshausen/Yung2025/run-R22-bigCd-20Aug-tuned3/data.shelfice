@@ -1,0 +1,20 @@
+# *******************************
+# Parameter for SHELFICE package
+# ******************************
+ &SHELFICE_PARM01
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile   = 'IceDraft_BedMachine_ext_qsg_yosi3.bin',
+ SHELFICEconserve = .TRUE.,
+ no_slip_shelfice = .false.,
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .TRUE.,
+ SHELFICEuseHJ99 = .FALSE.,
+ SHELFICEuseJ10 = .FALSE.,
+ SHELFICEuseR22 = .TRUE.,
+ SHELFICER22sa = -9.8997,
+ SHELFICER22sb = 0.222600,
+ SHELFICER22tc = -7.39041,
+ SHELFICER22td = 0.32220,
+ shiCdrag = 0.0073,
+ /
+ &

@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# Based on linux_amd64_ifort but with settings for gadi HPC at NCI
+#
+# https://nci.org.au/our-systems/hpc-systems
+
+# If no MPI_INC_DIR default to loaded OpenMPI + Intel
+if [ ! -v "MPI_INC_DIR" ] && [ -v "OPENMPI_ROOT" ] && [  "x$MPI" = xtrue ] ; then
+  MPI_INC_DIR="${OPENMPI_ROOT}/include/Intel" 
+  echo 'Setting MPI include dir: '${MPI_INC_DIR}
+else
+  echo "$MPI" 
+  echo "$MPI_INC_DIR" 
+  echo "$OPENMPI_ROOT"
+fi
+
+if test "x$MPI" = xtrue ; then
+  CC=mpicc
+  FC=mpif90
+  F90C=mpif90
+  LINK="$F90C -no-ipo"
+else
+  CC=icc
+  FC=ifort
+  F90C=ifort
+  LINK="$F90C -no-ipo"
+fi
+
+DEFINES='-DWORDLENGTH=4'
+CPP='cpp -traditional -P'
+F90FIXEDFORMAT='-fixed -Tf'
+EXTENDED_SRC_FLAG='-132'
+GET_FC_VERSION="--version"
+OMPFLAG='-openmp'
+
+NOOPTFLAGS='-O0 -g'
+NOOPTFILES=''
+
+FFLAGS="$FFLAGS -WB -convert big_endian -assume byterecl -mcmodel=medium"
+FFLAGS="$FFLAGS -fPIC"
+
+if test "x$IEEE" = x ; then     #- with optimisation:
+    FOPTIM='-O2 -align -xHost -ip'
+else
+  if test "x$DEVEL" = x ; then  #- no optimisation + IEEE :
+    # "-mp" is for ieee "maintain precision"
+    FOPTIM='-O0 -noalign -xW -ip -mp'
+  else                          #- development/check options:
+    FFLAGS="$FFLAGS -warn all -warn nounused"
+    FOPTIM="-fpe0 -fpstkchk -fpmodel except -check all -ftrapuv"
+    FOPTIM="$FOPTIM -O0 -noalign -g -traceback"
+  fi
+fi
+
+F90FLAGS=$FFLAGS
+F90OPTIM=$FOPTIM
+CFLAGS='-O -ip -fPIC'
+
+INCLUDEDIRS=''
+INCLUDES=''
+LIBS=''
+
+if [ "x$NETCDF_ROOT" != x ] ; then
+    INCLUDEDIRS="${NETCDF_ROOT}/include/Intel"
+    INCLUDES="-I${NETCDF_ROOT}/include/Intel"
+    LIBS="-L${NETCDF_ROOT}/lib/Intel"
+fi
+
+if [ -n "$MPI_INC_DIR" -a "x$MPI" = xtrue ] ; then
+    INCLUDES="$INCLUDES -I$MPI_INC_DIR"
+    INCLUDEDIRS="$INCLUDEDIRS $MPI_INC_DIR"
+    #- used for parallel (MPI) DIVA
+    MPIINCLUDEDIR="$MPI_INC_DIR"
+   #MPI_HEADER_FILES='mpif.h mpiof.h'
+fi
