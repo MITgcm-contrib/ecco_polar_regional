@@ -1,0 +1,22 @@
+#PBS -S /bin/bash
+#PBS -l select=1:ncpus=20:model=ivy
+#PBS -l walltime=7200
+#PBS -q devel 
+#PBS -W group_list=g26209
+#PBS -m e
+#PBS -o MISOMIP.outlog 
+#PBS -e MISOMIP.errlog 
+
+. /usr/share/modules/init/bash
+
+module load comp-intel/2015.0.090
+module load test/mpt.2.11r8
+module load netcdf/4.0
+module load mpi-mvapich2/1.4.1/gcc
+module load gcc/4.4.4
+export PATH="$PATH:."
+export MPI_GROUP_MAX=64
+
+cd /home1/ynakaya2/slr/models/isomip_warm_1/run 
+
+mpiexec -np 20 ./mitgcmuv

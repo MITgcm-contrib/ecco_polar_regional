@@ -1,0 +1,15 @@
+# ===================================
+# | Parameters for SHELFICE package |
+# ===================================
+ &SHELFICE_PARM01
+ shiCdrag =0.0025,
+ SHELFICEconserve = .TRUE.,
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile='icetopo.bin',
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .TRUE.,
+ SHELFICEuseHJ99 = .FALSE.,
+ SHELFICEuseJ10 = .FALSE.,
+ SHELFICEuseR22 = .TRUE.,
+ &
+

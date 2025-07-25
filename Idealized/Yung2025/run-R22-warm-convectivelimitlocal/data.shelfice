@@ -1,0 +1,29 @@
+# ===================================
+# | Parameters for SHELFICE package |
+# ===================================
+ &SHELFICE_PARM01
+ shiCdrag =0.0025,
+ SHELFICEconserve = .TRUE.,
+ SHELFICEboundaryLayer = .TRUE.,
+ SHELFICEtopoFile='icetopo.bin',
+ SHELFICEwriteState = .TRUE.,
+ SHELFICEuseGammaFrict = .TRUE.,
+ SHELFICEuseHJ99 = .FALSE.,
+ SHELFICEuseJ10 = .FALSE.,
+ SHELFICEuseR22 = .TRUE.,
+ SHELFICEuseTidal = .FALSE.,
+ shiuStarMin = 1.E-4,
+ shiuStarTidal = 0,
+ SHELFICER22sa = -9.8997,
+ SHELFICER22sb = 0.222600,
+ SHELFICER22tc = -7.39041,
+ SHELFICER22td = 0.32220,
+ shiLinFrEOSa = -0.0573,
+ shiLinFrEOSb = -7.53E-4,
+ shiLinFrEOSc = 0.0832,
+ SHELFICEkappa = 0.,
+ shiKinVisc = 1.95E-6,
+ SHELFICEuseMK18limit = .TRUE.,
+# shiConvTheta = 89.0,
+ &
+
