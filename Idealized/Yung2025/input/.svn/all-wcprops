@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/slr/!svn/ver/395/models/misomip/input
+END
+data.diagnostics
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/slr/!svn/ver/394/models/misomip/input/data.diagnostics
+END
+eedata
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/slr/!svn/ver/332/models/misomip/input/eedata
+END
+data
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/slr/!svn/ver/395/models/misomip/input/data
+END
+data.pkg
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/slr/!svn/ver/361/models/misomip/input/data.pkg
+END
+data.shelfice
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/slr/!svn/ver/333/models/misomip/input/data.shelfice
+END
+data.obcs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/slr/!svn/ver/361/models/misomip/input/data.obcs
+END

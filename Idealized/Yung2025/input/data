@@ -1,0 +1,83 @@
+# ====================
+# | Model parameters |
+# ====================
+#
+# Continuous equation parameters
+ &PARM01
+ Tref = 30*-1.9,
+ Sref = 30*34.4,
+ viscAz=1.E-3,
+ viscAh=6.0,
+ no_slip_sides=.TRUE.,
+ no_slip_bottom=.TRUE.,
+ diffKhT=1.0,
+ diffKzT=5.E-5,
+ diffKhS=1.0,
+ diffKzS=5.E-5,
+ beta=0.0,
+ bottomDragQuadratic=2.5E-3,
+ eosType='LINEAR', 
+ HeatCapacity_cp = 3974.0,
+ rhoConst=1027.21,
+ rhoNil=1027.51,
+ gravity=9.81,
+ debugLevel=-1,
+ convertFW2Salt = 33.4,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ exactConserv=.TRUE.,
+ hFacMin=0.25,
+ nonHydrostatic=.FALSE.,
+ globalfiles = .TRUE.,
+ useSingleCpuIO = .TRUE.,
+ staggerTimeStep=.TRUE.,
+ tempAdvScheme=33,
+ saltAdvScheme=33,
+ f0=-1.4048821E-4,
+ tAlpha=3.733E-5, 
+ sBeta=7.843E-4,
+ &
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=1000,
+ cg2dTargetResidual=1.E-13,
+ cg3dMaxIters=400,
+ cg3dTargetResidual=1.E-13,
+ &
+
+# Time stepping parameters
+ &PARM03
+ startTime=0.,
+ endTime=86400,
+ deltaT= 300.0,
+ abEps=0.1,
+ cAdjFreq = 1.,
+ pChkptFreq=86400,
+ chkptFreq=0.,
+ dumpFreq=0,
+ taveFreq=86400,
+ monitorFreq=86400,
+ monitorSelect=2,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingSphericalPolarGrid=.FALSE.,
+ usingCartesianGrid=.TRUE.,
+ xgOrigin = 320000.0,
+ ygOrigin = -2000.0,
+ delX = 240*2E3,
+ delY = 42*2E3,
+ delZ = 37*20.,
+ &
+
+# Input datasets
+ &PARM05
+ bathyFile       = 'bathymetry.bin',
+ hydrogSaltFile  = 'Salt.bin',
+ hydrogThetaFile = 'Theta.bin',
+ uVelInitFile    = 'Uvel.bin',
+ vVelInitFile    = 'Vvel.bin',
+ pSurfInitFile   = 'Etan.bin',
+ &

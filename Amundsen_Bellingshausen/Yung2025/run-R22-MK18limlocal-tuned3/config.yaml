@@ -1,0 +1,32 @@
+queue: normal
+# qsub_flags: -lother=hyperthread
+project: oz91
+walltime: 12:00:00
+ncpus: 100
+mem: 310GB
+jobname: mitgcmPIGR22test
+#collate_walltime: 10:00:00
+#collate_mem: 2GB
+# postscript: /home/157/ixr157/scripts/jobs/run_extract
+#restart_history: 10
+model: mitgcm
+shortpath: /scratch/x77/cy8964/gadi_short/
+exe: /home/156/cy8964/MITgcm-realistic/verification/PIG/run-R22-MK18limlocal-tuned3/mitgcmuv
+#qsub_flags: -W umask=027 
+
+input: 
+    - /home/156/cy8964/MITgcm-realistic/verification/PIG/run-R22-MK18limlocal-tuned3/
+    - /home/156/cy8964/MITgcm-realistic/verification/PIG/input-PIG/
+      #    - /g/data/x77/cy8964/PIG/ECCO2/High_res_PIG/PIG_only_200m/latlon_run23/era_xx_it50
+    - /g/data/x77/cy8964/PIG/ECCO2/High_res_PIG/PIG_only_200m/latlon_run23/era_xx_it50/
+storage:
+      gdata:
+              - x77
+runlog: false
+collate: false
+
+platform:
+ nodesize: 48
+
+ #manifest:
+ #fullhash: binhash
