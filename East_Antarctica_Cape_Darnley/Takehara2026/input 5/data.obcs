@@ -1,0 +1,89 @@
+
+# ***************
+# Open boundaries
+# ***************
+ &OBCS_PARM01
+ OB_Jnorth =   240*-1,
+ OB_Jsouth =   240*1,
+ OB_Ieast  =   120*-1,
+ OB_Iwest  =   120*1,
+#
+ useOBCSprescribe =.TRUE.,
+ useOBCSbalance=.TRUE.,
+#useOBCSsponge    =.TRUE.,
+ OBCSsponge_UatNS =.FALSE.
+ OBCSsponge_VatEW =.FALSE.
+#
+ OBNsFile='FOBNs_m_dat40_40_0.4.bin',
+ OBNtFile='FOBNt_m_dat40_100_1.0_1.bin',
+ OBNuFile='FOBNu_m.bin',
+ OBNvFile='FOBNv_m.bin',
+#
+ OBSsFile='FOBSs_m_dat40_40_0.4.bin',
+ OBStFile='FOBSt_m_dat40_100_1.0_1.bin',
+ OBSuFile='FOBSu_m.bin',
+ OBSvFile='FOBSv_m.bin',
+#
+ OBEsFile='FOBEs_m_dat40_40_0.4.bin',
+ OBEtFile='FOBEt_m_dat40_100_1.0_1.bin',
+ OBEuFile='FOBEu_m.bin',
+ OBEvFile='FOBEv_m.bin',
+#
+ OBWsFile='FOBWs_m_dat40_40_0.4.bin',
+ OBWtFile='FOBWt_m_dat40_100_1.0_1.bin',
+ OBWuFile='FOBWu_m.bin',
+ OBWvFile='FOBWv_m.bin',
+#
+ OBNaFile   = 'OBNa_m.bin',
+ OBNhFile   = 'OBNh_m.bin',
+ OBNslFile  = 'OBNsl_m.bin',
+ OBNsnFile  = 'OBNsn_m.bin',
+ OBNuiceFile= 'OBNuice_m.bin',
+ OBNviceFile= 'OBNvice_m.bin',
+#
+ OBSaFile   = 'OBSa_m.bin',
+ OBShFile   = 'OBSh_m.bin',
+ OBSslFile  = 'OBSsl_m.bin',
+ OBSsnFile  = 'OBSsn_m.bin',
+ OBSuiceFile= 'OBSuice_m.bin',
+ OBSviceFile= 'OBSvice_m.bin',
+#
+ OBEaFile   = 'OBEa_m.bin',
+ OBEhFile   = 'OBEh_m.bin',
+ OBEslFile  = 'OBEsl_m.bin',
+ OBEsnFile  = 'OBEsn_m.bin',
+ OBEuiceFile= 'OBEuice_m.bin',
+ OBEviceFile= 'OBEvice_m.bin',
+#
+ OBWaFile   = 'OBWa_m.bin',
+ OBWhFile   = 'OBWh_m.bin',
+ OBWslFile  = 'OBWsl_m.bin',
+ OBWsnFile  = 'OBWsn_m.bin',
+ OBWuiceFile= 'OBWuice_m.bin',
+ OBWviceFile= 'OBWvice_m.bin',
+#
+ useOBCStides = .FALSE.,
+#components   = M2       S2     N2       K2       K1      O1       P1       Q1       Mf         Mm
+#periods (hr) = 12.4206  12     12.6583  11.9672  23.9345 25.8193  24.0659  26.8684  327.8599   661.31
+# tidalPeriod  = 44714.16,43200.,45569.88,43081.92,86164.2,92949.48,86637.24,96726.24,1180295.64,2380716.,
+# OBSamFile='OBSam.seaice_obcs',
+# OBNamFile='OBNam.seaice_obcs.v',
+# OBNamtFile='OBNam.seaice_obcs.u',
+# OBEamFile='OBEam.seaice_obcs',
+# OBWamFile='OBWam.seaice_obcs',
+# OBSphFile='OBSph.seaice_obcs',
+# OBNphFile='OBNph.seaice_obcs.v',
+# OBNphtFile='OBNph.seaice_obcs.u',
+# OBEphFile='OBEph.seaice_obcs',
+# OBWphFile='OBWph.seaice_obcs',
+ &
+# *****************************************
+# Sponge Layer Parameters.
+# *****************************************
+ &OBCS_PARM03
+ Urelaxobcsinner=1296000.E0,
+ Urelaxobcsbound=43200.E0,
+ Vrelaxobcsinner=1296000.E0,
+ Vrelaxobcsbound=43200.E0,
+ spongeThickness=3,
+ /

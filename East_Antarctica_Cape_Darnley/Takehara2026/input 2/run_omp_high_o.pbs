@@ -1,0 +1,14 @@
+#!/bin/sh
+#------ pjsub option --------#
+#PJM -L rscgrp=regular-o
+#PJM -L node=1
+#PJM --mpi proc=32
+#PJM --omp thread=1 
+#PJM -L elapse=24:00:00
+#PJM -g gr18
+#PJM -j
+#------- Program execution -------#
+module load fj
+module load fjmpi
+cd /work/gr18/r18006/MITgcm/run/test/run8-temp-1/
+mpiexec -n ${PJM_MPI_PROC} ./mitgcmuv -Wl,-T
